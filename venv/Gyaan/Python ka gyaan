@@ -1,0 +1,149 @@
+ 😃Python 3.0
+
+ 😃 comments: # is used to comment
+
+ Data types:
+ 😃type(value_of_variable) => gives data type of variable
+ 😃/ -> devision
+     rounding: 😃round(number, decimal_points)
+ 😃// -> integer devision (10 // 3 = 3 , not 3.33.. ) ;
+ 😃 exponentiation : 2 ** 3 = 8
+
+ multiple variable assignment: a,b,c = 1,2,3 => a=1, b=2, c=3
+
+ in python:
+   list is array[]
+   dictionary is map<k,v>
+
+  String can be in single or double quotes, doesnt make a difference
+  String formatting (f "{variable}") : => f is mandatory to format
+  cnt = 2 ; print(f"count is 😃{cnt}")
+
+  String index: name = divya
+  print(name[0]) => d ; print(name[-1]) => a ; 😃-ve indexes start from end of string
+
+  😃data type conversion: * 'str' is a reserved keyword *
+  age_list = [10,11,12]
+  age_string = str(age) ; print(  age_string ) => "10,11,12"
+
+  😃 read from user/console :
+  value = 😃input()  or input("prompt message")  => input is always in string , need to convert it precise data type
+
+
+  😃Conditional blocks:
+  if condition:
+    do..
+  elif condition:
+    do..elif...
+  else:
+    do..else..
+
+  x is 1 # true if x = 1 else false
+
+  a = [1,2,3]
+  b = [1,2,3]
+  a == b => true
+  😃a is b => false ? not in same place in memory
+
+
+  LOOPING:
+
+  for item in iterable_object:
+    do.. . .
+
+  while boolean_condition:
+    do...
+
+
+Lists:
+lis_items = [a,b,c,d]
+len(lis_items) => 4
+
+tasks = list(range(1,10))
+tasks.sort()
+tasks.append(11) => 11 items
+tasks.append([12,13]) => 12 items in total, this array is added as a single member
+    .clear() , .remove("item_value")
+    .index(item_value) => index of this value
+    .index(item_value, start_from_index_value) => index of this value
+    .index(item_value, start_from_index_value, end_index_value)
+    .count(value) => gives count of item
+    .reverse()
+ join(tasks) => '1 2 3 . . n'
+ tasks[start:end:step] => for slicing the list (-ve no. start from end)
+ tasks = [a,b,c,d]
+ tasks[1:] => b,c,d
+ tasks[1:3] => b,c
+ tasks[1::2] => b,d
+ swapping => tasks[x], tasks[y] = tasks[y], tasks[x]
+
+ List comprehension:
+ task = [1,2,3,4]
+ [operation for var in list_var condition]
+ [x*2 for x in task if x%2 == 0] => [4,8]
+
+
+ Dictionaries:
+ myDict = {'key': 'value'} OR {'key' = 'value'}
+
+ print(myDict['key']) => value
+
+ iteration:
+ for val in myDict.values():
+    do...
+
+ for k,v in myDict.items():
+    print(k + v) . . . .
+
+    'key' in myDict => gives true/false as per presence
+
+Methods in dictionary:
+    myDict = {'a': 1, 'b': 2}
+    x = myDict.copy()
+    => x == myDict => true
+        x is myDict => false as different references
+
+   😃fromKeys()
+
+   {}.fromKeys('a', 'b') #{'a', 'b'}
+   {}.fromKeys([a,b], 1) # {'a':1, 'b': 1} => usage ? default value assignment
+   {}.fromKeys('a', [1,2,4]) #{'a', [1,2,4]}
+
+   myDict.get('key') => either value or none if not present
+
+   😃.pop('key') => removes and get item
+   😃.popitem() => removes random item
+
+   tempDict = 😃dict('x': 1, 'y': 2)
+   myDict.😃update(tempDict) => {'a': 1, 'b': 2, 'x': 1, 'y': 2}
+
+Dictionary comprehension:
+  [key_opr: val_opr for var in dictVar condition]
+  [key*1 : val + 1 for key,val in myDict if key %2 == 0]
+
+Tuples:
+    immutable, faster than lists
+    myTpl = (1,2,3,4) or tuple(1,2,3,4)
+
+    we cant use List as key but can use tuple as a key as keys shouldn't change! ???
+
+    location = { (76.12, 21.324) : 'tokyo'} => ok
+    location = { [76.12, 21.324] : 'tokyo'} => error, non hashable types
+
+    myTpl.index(item) => index or error if not present
+
+    nested tuples  => (1,2,(3,4,5),6) => ok
+
+😃Sets:
+    no duplicates, unordered
+    x = {1,2,3,1,2,4}
+    y = set(x) => {1,2,3,4}
+    or z = set(1,2,3,4,1) => {1,2,3,4}
+
+  😃Methods in Set:
+  x.add(value) => duplicate ? no error, just not added!
+  x.remove(value) => removes or error if not present
+    .clear()
+    intersection => set1 & set2
+    union => s1 | s2
+    symmetric_difference =>
