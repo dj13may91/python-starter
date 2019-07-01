@@ -147,3 +147,56 @@ Tuples:
     intersection => set1 & set2
     union => s1 | s2
     symmetric_difference =>
+
+Functions:
+    def method_name():
+        do. . .
+        return value #not mandatory
+
+    Anything written afer return doesnt cause an error but is never executed
+
+    Parameterized:
+    def method(a , b):
+        return a*b
+
+    Default parameters: => should be at the end of parameter list
+    def exponent(num, power = 2): => if nothing specified, default value is used!
+        return num ** power
+
+    Passing function as argument:
+    def add(a,b, fn=exponent):
+        return fn(a,b)
+
+    keyword argument:
+    exponent(power = 3, num = 2) => still return 2^3 = 8
+
+    scope:
+
+    total = 0
+    def increment():
+       total++
+       return total
+    increment()  #error => cant find it in function scope
+
+    Correct way:
+    def increment():
+       😃global total
+       total++
+       return total
+
+Nested functions and their scope:
+
+    def outer():
+        count = 0
+        def inner():
+            😃nonlocal count
+            count++
+            return count
+         return inner()
+
+    Documenting functions:
+    def my_func():
+        """ function description """
+        print("hello")
+
+    😃print(my_func.__doc__) => function description
