@@ -200,3 +200,43 @@ Nested functions and their scope:
         print("hello")
 
     😃print(my_func.__doc__) => function description
+
+  😃*args => it converts input into tuple
+  def add(a,b,c,d,e)
+        print(a-b-c-d-e)
+
+  other way:
+  def add(*arg_variable):
+    for x in * arg_variable:
+        print(x)
+
+  **kwargs => stores remaining arguments in a dictionary
+  def add(**kwargs):
+    for k,v in kwargs.items():
+        print (k + v)
+
+  add('a'=1, 'b'=2, 'c'=3)
+
+  if we pass a whole list/tuple/set in *args, it doesnt unpack them, just converts them into a list
+  example:
+  a = [1,2,3]
+  add(a) => gives error
+  Solution: add(*a) => unpacks and sends them as different argument
+  Similarly, for dictionaries, pass as method(**dict_variable)
+
+
+  Parameter ordering:
+  1. parameters
+  2. *args
+  3. default args
+  4. **kwargs
+
+  example:
+  def display(a,b, *args, name="divya", **kwargs)
+    do. . .
+
+  display(1,2,3, last_name = "jain", lang = "python")
+  => a =1, b=2
+        *args = (3,) => comma will be there after 3 as python distinguishes it from a method call!
+        **kwargs = {last_name = "jain", lang = "python"}
+
