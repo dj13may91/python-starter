@@ -4,9 +4,9 @@
 
  Data types:
  😃type(value_of_variable) => gives data type of variable
- 😃/ -> devision
+ 😃/ -> division
      rounding: 😃round(number, decimal_points)
- 😃// -> integer devision (10 // 3 = 3 , not 3.33.. ) ;
+ 😃// -> integer division (10 // 3 = 3 , not 3.33.. ) ;
  😃 exponentiation : 2 ** 3 = 8
 
  multiple variable assignment: a,b,c = 1,2,3 => a=1, b=2, c=3
@@ -239,4 +239,113 @@ Nested functions and their scope:
   => a =1, b=2
         *args = (3,) => comma will be there after 3 as python distinguishes it from a method call!
         **kwargs = {last_name = "jain", lang = "python"}
+
+
+LAMBDAS:
+
+    def square(a):
+        return a*a
+
+    mult_lamb = lambda a,b: a*b
+    mult_lamb(3,2) => 6
+
+map():
+    nums = [1,2,3,4]
+    doubles = map(lambda x: x*2, nums)
+    list(doubles) => [2,4,6,8]
+
+filter()
+    evens = list (filter(lambds x: x%2 == 0, nums))
+
+all():
+    all(x%2 == 0 for x in [2,4,6,8])
+        => returns true if all satisfy
+any():
+    any(x%2 == 0 for x in [2,3,4,5])
+
+[] => LIST COMPREHENSION
+ VS
+() => GENERATOR EXPRESSIONS
+    WHICH ONE TO USE ? use GE if you only iterate once and dont need to save the return values
+
+sys.getsizeof([x*10 for x in range(1000)]) => LC ~= 9000bytes
+sys.getsizeof((x*10 for x in range(1000))) => GE ~= 88 bytes
+
+sorted():
+    nums = [1,5,3,2]
+    sorted(nums) => [1,2,3,5]
+    print(nums) => [1,5,3,2] i.e unchanged
+
+   Also, .sort() works only on lists while sorted can take tuples too
+   sorted on dictionary requires keys
+
+   sorted(myDict, key = len) => each dict has len
+   sorted(myDict, key = lambda myDict: myDict['username'])
+
+max() / min():
+    returns max/min of passed collection
+reversed():
+    returns list of what is requested to reverse!
+    example : reversed("hello") => returns list of chars in reverse order: ['o','l','l','e','h']
+
+len() or collection_var.__len__():
+    returns length of passed collection/string
+
+abs(4.444) => 4
+
+sum():
+    sum([[1,2,3], 4]) => 10
+
+round(num, decimal_places):
+
+zip(): => stops at the smallest tuple/set/list
+    a = zip([1,2,3], [4,5,6])
+    list(a) => ([1,4],[2,5],[3,6])
+    dict(a) => {1:2, 3:4, 5:6}
+
+    b = zip([1,2,3], [4,5])
+    list(b) => ([1,4], [2,5])
+
+unpack a zip :
+    a_zip = [(1,2), (3,4)]
+    list(*a) => [(1,3), (2,4)]
+
+Errors:
+    NameError => undefined variable name
+    TypeError => mismatch of data type ; len(5) => TypeError
+    IndexError => invalid index access
+    ValueError => int("foo") => not expecting a string
+    KeyError => key not in dict
+    AttributeError => if we call a non existing method on a data type => "abc".foo() => does not exist!!
+
+Custom error raising:
+    😃raise ValueError("My error message")
+
+Error Handling:
+    try:
+        do....
+    expect NameError as err:   # or expect:   => this will catch all the errors, wrong practise
+        print(err)
+        do...
+
+
+    try: do..
+    expect (NameError, ValueError) as err: do... # if problem , expect runs
+    else: do... # if no problem, else runs
+    finally: do... #always runs
+
+Python debugging
+
+
+
+
+
+
+
+
+
+
+
+
+
 
