@@ -38,7 +38,7 @@
   else:
     do..else..
 
-  x is 1 # true if x = 1 else false
+  x is 1 # true, if x = 1, else false
 
   a = [1,2,3]
   b = [1,2,3]
@@ -56,8 +56,8 @@
 
 
 Lists:
-lis_items = [a,b,c,d]
-len(lis_items) => 4
+    lis_items = [a,b,c,d]
+    len(lis_items) => 4
 
 tasks = list(range(1,10))
 tasks.sort()
@@ -70,7 +70,7 @@ tasks.append([12,13]) => 12 items in total, this array is added as a single memb
     .count(value) => gives count of item
     .reverse()
  join(tasks) => '1 2 3 . . n'
- tasks[start:end:step] => for slicing the list (-ve no. start from end)
+ tasks[start:end:step] => for slicing the list (-ve no. starts from end)
  tasks = [a,b,c,d]
  tasks[1:] => b,c,d
  tasks[1:3] => b,c
@@ -334,13 +334,36 @@ Error Handling:
     else: do... # if no problem, else runs
     finally: do... #always runs
 
-Python debugging
+Python debugging : use module pdb
+
+Python modules:
+    import module_name
+    import module_name as alias_name
+    to import parts of module:
+        from module_name import part_name1, part_name2
+
+    importing custom files/modules"
+        import employee as emp
+            usage: emp.get_id()
+        Part import
+            from employee import get_id as g
 
 
+    External modules:
+        Installation: python -m pip install NAME_OF_PACKAGE
+                      python -m pip install termcolor  => this allows to add color to logs and more!
+
+        View object names in a package: dir(termcolor)
+        help(termcolor) => shows documentation of the package!
+
+    Python code style: python -m pip install autopep8
+
+😃__name__ variable
+    => gives name of the file if not the main file
 
 
-
-
+Making HTTP requests:
+    python -m pip install requests
 
 
 
