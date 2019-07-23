@@ -1,0 +1,6 @@
+numpy => includes mathematical tools
+matplotlib.pyplot => it is used to plot charts
+pandas => it is used to import and manage datasets
+sklearn.preprocessing => used to preprocess data
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder=> used to categorize columns on basis of values
+from sklearn.model_selection import train_test_split => used to split data in test and training sets
