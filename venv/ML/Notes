@@ -8,4 +8,5 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder=> used to categori
 from sklearn.model_selection import train_test_split => used to split data in test and training sets
 
 # building the optimal model using backward elimination (BE)
+https://www.statsmodels.org/stable/index.html
 statsmodels.api  (earlier statsmodels.formula.api)
