@@ -25,12 +25,12 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 # anything that can be grouped in terms of values is categorical column (finite possibilities of value)
 labelencoder_X = LabelEncoder()
-X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
+X[:, 0] = labelencoder_X.fit_transform(X[:, 0])  # here 0 is the index of categorical column
 # above assigns numeric codes to countries starting from 0 and upto n
 # problem with this is that for example spain = 0 and france =1, ML will treat france > spain as 1>0
 # to avoid this, we will be using OneHotEncoder class
 
-ohEncoder = OneHotEncoder(categorical_features=[0])
+ohEncoder = OneHotEncoder(categorical_features=[0])  # here 0 is the index of categorical column
 X = ohEncoder.fit_transform(X).toarray()
 # what OneHotEncoder does is that it create n columns for n different categories
 # where value = 1 for category and rest all are 0
